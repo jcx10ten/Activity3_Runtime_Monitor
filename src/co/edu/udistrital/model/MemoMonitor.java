@@ -1,4 +1,4 @@
-package model;
+package co.edu.udistrital.model;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;

@@ -1,4 +1,4 @@
-package model;
+package co.edu.udistrital.model;
 
 public class MemoData {
 

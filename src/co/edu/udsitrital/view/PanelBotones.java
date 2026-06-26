@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.edu.udistrital.view;
+package co.edu.udsitrital.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,7 +15,6 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 
 /**
  *
@@ -55,11 +54,13 @@ public class PanelBotones extends JPanel {
         pCombo.add(comboProcesos);
 
         btnIniciar = new JButton("Iniciar");
+        btnIniciar.setActionCommand("iniciar");
         btnIniciar.setBackground(new Color(100, 100, 100));
         btnIniciar.setForeground(Color.WHITE);
         btnIniciar.setPreferredSize(new Dimension(180, 25));
 
         btnFinalizar = new JButton("Finalizar");
+        btnFinalizar.setActionCommand("fin");
         btnFinalizar.setBackground(new Color(230, 200, 185));
         btnFinalizar.setForeground(new Color(80, 50, 30));
         btnFinalizar.setPreferredSize(new Dimension(180, 25));
