@@ -14,7 +14,7 @@ public class Launcher {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Controlador Controlador = new Controlador();
+        Controller Controlador = new Controller();
     }
     
 }

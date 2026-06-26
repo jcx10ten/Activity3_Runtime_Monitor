@@ -7,31 +7,28 @@ package controller;
 import model.JvmConnector;
 import model.MemoData;
 import model.MemoMonitor;
-import view.VentanaPrincipal;
 import javax.swing.Timer;
 
-public class Controlador {
+public class Controller {
     private JvmConnector connector;
     private MemoMonitor monitor;
-    private VentanaPrincipal vista;
     private Timer timer;
 
-    public Controlador(VentanaPrincipal vista) {
-        this.vista = vista;
+    public Controller() {
         this.connector = new JvmConnector();
         this.monitor = new MemoMonitor(connector);
     }
 
     public void conectar() {
-        String host = vista.getHost();
-        int port = vista.getPort();
+    //    String host = vista.getHost();
+    //    int port = vista.getPort();
 
         try {
             connector.conectar(host, port);
-            vista.mostrarMensaje("Conectado a " + host + ":" + port);
+       //     vista.mostrarMensaje("Conectado a " + host + ":" + port);
             iniciarMonitoreo();
         } catch (Exception e) {
-            vista.mostrarError("No se pudo conectar: " + e.getMessage());
+      //      vista.mostrarError("No se pudo conectar: " + e.getMessage());
         }
     }
 
@@ -39,9 +36,9 @@ public class Controlador {
         detenerMonitoreo();
         try {
             connector.desconectar();
-            vista.mostrarMensaje("Desconectado.");
+      //      vista.mostrarMensaje("Desconectado.");
         } catch (Exception e) {
-            vista.mostrarError("Error al desconectar: " + e.getMessage());
+      //      vista.mostrarError("Error al desconectar: " + e.getMessage());
         }
     }
 
@@ -49,10 +46,10 @@ public class Controlador {
         timer = new Timer(2000, e -> {
             try {
                 MemoData data = monitor.leerMemoria();
-                vista.agregarFila(data);
+           //     vista.agregarFila(data);
             } catch (Exception ex) {
                 detenerMonitoreo();
-                vista.mostrarError("Se perdió la conexión: " + ex.getMessage());
+        //        vista.mostrarError("Se perdió la conexión: " + ex.getMessage());
             }
         });
         timer.start();
